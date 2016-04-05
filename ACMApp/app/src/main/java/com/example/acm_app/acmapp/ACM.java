@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 public class ACM extends AppCompatActivity {
 //Wen Cao made this
-    //comment2
+    //comm
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
