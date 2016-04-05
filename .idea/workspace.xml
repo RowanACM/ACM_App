@@ -27,7 +27,11 @@
         <entry file="file://$PROJECT_DIR$/ACMApp/app/src/main/java/com/example/acm_app/acmapp/ACM.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.17274472">
+<<<<<<< HEAD
               <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+=======
+              <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+>>>>>>> bb84a0c84b7288706e7c3b770ff34cee8614a4ed
               <folding />
             </state>
           </provider>
@@ -248,7 +252,11 @@
     <entry file="file://$PROJECT_DIR$/ACMApp/app/src/main/java/com/example/acm_app/acmapp/ACM.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.17274472">
+<<<<<<< HEAD
           <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+=======
+          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+>>>>>>> bb84a0c84b7288706e7c3b770ff34cee8614a4ed
           <folding />
         </state>
       </provider>
