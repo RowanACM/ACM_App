@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ACMApp</string>
+    <string name="title_activity_check_in">CheckInActivity</string>
 </resources>
