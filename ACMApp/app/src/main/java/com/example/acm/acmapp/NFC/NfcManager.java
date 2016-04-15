@@ -15,6 +15,8 @@ import android.nfc.tech.NdefFormatable;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.example.acm.acmapp.R;
+
 import java.io.IOException;
 
 /**
@@ -90,14 +92,14 @@ public class NfcManager {
     public void onActivityResume() {
         if (nfcAdapter != null) {
             if (!nfcAdapter.isEnabled()) {
-                Toast.makeText(activity, "Turn on NFC", Toast.LENGTH_LONG).show();
+                Toast.makeText(activity, R.string.turn_on_nfc, Toast.LENGTH_LONG).show();
             }
             nfcAdapter.enableForegroundDispatch(activity, pendingIntent, null, null);
         }
     }
 
     /**
-     * To be executed on onPause of the activity
+     * When the activity is paused, disable the NFC adapter
      */
     public void onActivityPause() {
         if (nfcAdapter != null) {
@@ -147,18 +149,6 @@ public class NfcManager {
             String tagId = byteArrayToHexString(tagByteId);
 
             onTagReadListener.onTagRead(tagId);
-
-
-            // Read the information on the tag
-			/*
-			Parcelable[] rawMsgs = intent.getParcelableArrayExtra(NfcAdapter.EXTRA_NDEF_MESSAGES);
-			if (rawMsgs != null) {
-				NdefRecord[] records = ((NdefMessage) rawMsgs[0]).getRecords();
-				String text = ndefRecordToString(records[0]);
-				onTagReadListener.onTagRead(text);
-			}
-			*/
-
         }
     }
 
@@ -170,7 +160,7 @@ public class NfcManager {
     private String byteArrayToHexString(byte[] inarray) {
         // I honestly have no idea what this code is doing but it works
         int i, j, in;
-        String [] hex = {"0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"};
+        String[] hex = {"0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"};
         String out= "";
 
         for(j = 0 ; j < inarray.length ; j++) {

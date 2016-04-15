@@ -7,22 +7,22 @@ import java.util.Queue;
 
 /**
  * Information that is saved when the activity is closed
- * Saves the current location, server password, and a list of pending taps
+ * Saves the current location, server serverPassword, and a list of pending taps
  */
 public class SaveData implements Serializable{
     private static String currentLocation = "Unknown";
     private static Queue<Scan> scans = new LinkedList<>();
-    private static String password = "-1";
+    private static String serverPassword = "-1";
 
     public SaveData() {
 
     }
 
-    public static void setPassword(String pass){
-        password = pass;
+    public static void setServerPassword(String pass){
+        serverPassword = pass;
     }
-    public static String getPassword(){
-        return password;
+    public static String getServerPassword(){
+        return serverPassword;
     }
     public void setCurrentLocation(String loc){
         currentLocation = loc;
