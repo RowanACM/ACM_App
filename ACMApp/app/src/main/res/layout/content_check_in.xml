@@ -10,6 +10,33 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".Activities.CheckInActivity"
-    tools:showIn="@layout/activity_check_in">
+    tools:showIn="@layout/activity_check_in"
+    android:background="#fbfae1">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Rowan"
+        android:id="@+id/textView"
+        android:layout_marginTop="140dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentStart="false"
+        android:textColor="#665024"
+        android:textSize="30sp"
+        android:typeface="serif" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="ACM"
+        android:id="@+id/textView2"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:autoText="true"
+        android:textColor="#665024"
+        android:textSize="50sp"
+        android:typeface="serif" />
 </RelativeLayout>
