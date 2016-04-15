@@ -42,7 +42,7 @@ public class SendToServer {
             String jsonString = "";
             try {
                 JSONObject data = new JSONObject();
-                data.put("auth_token", SaveData.getPassword());
+                data.put("auth_token", SaveData.getServerPassword());
                 data.put("serial", scan.getGuestId());
                 data.put("timestamp", scan.getTime());
                 if(isEvent)

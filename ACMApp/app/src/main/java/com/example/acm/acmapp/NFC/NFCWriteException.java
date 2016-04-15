@@ -1,7 +1,7 @@
 package com.example.acm.acmapp.NFC;
 
 /**
- * Exception thrown when writing nfc tags
+ * Exception thrown when writing NFC tags
  */
 public class NFCWriteException extends Exception {
     private static final long serialVersionUID = 4647185067874734143L;

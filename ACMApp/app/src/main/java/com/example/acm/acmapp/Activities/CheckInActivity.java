@@ -44,8 +44,8 @@ public class CheckInActivity extends AppCompatActivity {
         // Create the NFC Manager
         createNfcManager();
 
-        //SaveData.setPassword(getString(R.string.api_key));
-        SaveData.setPassword("password");
+        //SaveData.setServerPassword(getString(R.string.api_key));
+        SaveData.setServerPassword("password");
 
         // Where to display an error toast
         SendToServer.setContext(this);
@@ -175,7 +175,7 @@ public class CheckInActivity extends AppCompatActivity {
     }
 
     private void sendTagsToServer() {
-        if(SaveData.getPassword().equals("-1")) {
+        if(SaveData.getServerPassword().equals("-1")) {
             Toast.makeText(getBaseContext(), "Please Insert Pass Key to Send Data", Toast.LENGTH_LONG).show();
         }
         SendToServer.send();

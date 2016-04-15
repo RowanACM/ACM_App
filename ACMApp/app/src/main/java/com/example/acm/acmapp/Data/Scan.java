@@ -28,33 +28,41 @@ public class Scan {
      * @param location The location where the tag was scanned
      * @param time The time that the tag was scanned
      */
-    public Scan(String guestId, String location, String time){
+    public Scan(String guestId, String location, String time) {
         this.guestId = guestId;
         this.location = location;
         this.time = time;
     }
 
-    public void setTime(String time){
+    /**
+     * Set the time of the scan
+     * @param time The new time scanner
+     */
+    public void setTime(String time) {
         this.time = time;
     }
 
-    public void setGuestId(String guestId){
+    public void setGuestId(String guestId) {
         this.guestId = guestId;
     }
 
-    public void setLocation(String location){
+    /**
+     * Set the location of scan
+     * @param location Where the tag was scanned
+     */
+    public void setLocation(String location) {
         this.location=location;
     }
 
-    public String getTime(){
+    public String getTime() {
         return time;
     }
 
-    public String getGuestId(){
+    public String getGuestId() {
         return guestId;
     }
 
-    public String getLocation(){
+    public String getLocation() {
         return location;
     }
 
