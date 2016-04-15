@@ -6,4 +6,5 @@
     <string name="wait_write_dialog_title">Write on NFC Tag</string>
     <string name="wait_write_dialog_text">Approach an NFC tag</string>
     <string name="error_already_registered">Already Registered</string>
+    <string name="scan_successful">Scan Successful</string>
 </resources>

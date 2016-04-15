@@ -22,8 +22,8 @@ import java.net.URL;
  */
 public class SendToServer {
 
-    private static final String REGISTRATION_URL = "http://www.profhacks.com/api/post/registration/";
-    private static final String EVENT_URL = "http://www.profhacks.com/api/post/event/";
+    private static final String REGISTRATION_URL = "http://www.acm.rowan.com/";
+    private static final String EVENT_URL = "http://www.acm.rowan.com/api/post/event/";
 
     private static final String LOG_TAG = SendToServer.class.getSimpleName();
 
