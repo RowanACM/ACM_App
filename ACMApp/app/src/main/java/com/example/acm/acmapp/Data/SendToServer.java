@@ -1,4 +1,4 @@
-package com.example.acm.acmapp;
+package com.example.acm.acmapp.Data;
 
 import android.content.Context;
 import android.os.AsyncTask;
@@ -6,6 +6,8 @@ import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 import android.widget.Toast;
+
+import com.example.acm.acmapp.R;
 
 import org.json.JSONException;
 import org.json.JSONObject;

@@ -1,4 +1,4 @@
-package com.example.acm.acmapp;
+package com.example.acm.acmapp.NFC;
 
 /**
  * Exception thrown when writing nfc tags

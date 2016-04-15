@@ -1,4 +1,4 @@
-package com.example.acm.acmapp;
+package com.example.acm.acmapp.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,9 @@ import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.Button;
+
+import com.example.acm.acmapp.Activities.CheckInActivity;
+import com.example.acm.acmapp.R;
 
 public class MainActivity extends AppCompatActivity {
 

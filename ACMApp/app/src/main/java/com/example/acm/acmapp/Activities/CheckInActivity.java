@@ -1,4 +1,4 @@
-package com.example.acm.acmapp;
+package com.example.acm.acmapp.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
+
+import com.example.acm.acmapp.NFC.NfcManager;
+import com.example.acm.acmapp.R;
+import com.example.acm.acmapp.Data.ReadWrite;
+import com.example.acm.acmapp.Data.SaveData;
+import com.example.acm.acmapp.Data.Scan;
+import com.example.acm.acmapp.Data.SendToServer;
 
 import java.io.IOException;
 

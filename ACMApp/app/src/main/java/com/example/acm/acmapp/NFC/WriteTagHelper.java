@@ -1,4 +1,4 @@
-package com.example.acm.acmapp;
+package com.example.acm.acmapp.NFC;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -7,6 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.example.acm.acmapp.NFC.NFCWriteException;
+import com.example.acm.acmapp.NFC.NfcManager;
+import com.example.acm.acmapp.R;
 
 /**
  * Helper for writing tags.

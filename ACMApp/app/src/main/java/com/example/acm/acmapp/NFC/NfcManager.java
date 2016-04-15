@@ -1,4 +1,4 @@
-package com.example.acm.acmapp;
+package com.example.acm.acmapp.NFC;
 
 import android.app.Activity;
 import android.app.PendingIntent;
