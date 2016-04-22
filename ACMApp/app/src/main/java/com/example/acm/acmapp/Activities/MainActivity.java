@@ -1,9 +1,13 @@
-package com.example.acm.acmapp;
+package com.example.acm.acmapp.Activities;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.widget.Button;
+import com.example.acm.acmapp.R;
 import android.webkit.WebViewClient;
 
 public class MainActivity extends AppCompatActivity {
@@ -32,6 +36,17 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         webView.setWebViewClient(new MyWebViewClient());
+
+        final Intent switchActivityIntent = new Intent(this, CheckInActivity.class);
+
+        Button checkIn = (Button) findViewById(R.id.check_in_button);
+        checkIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(switchActivityIntent);
+            }
+        });
+
 
     }
 

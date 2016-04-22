@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">ACMApp</string>
+    <string name="title_activity_check_in">CheckInActivity</string>
+    <string name="tag_written_toast">Tag Written</string>
+    <string name="cancel">Cancel</string>
+    <string name="wait_write_dialog_title">Write on NFC Tag</string>
+    <string name="wait_write_dialog_text">Approach an NFC tag</string>
+    <string name="error_already_registered">Already Registered</string>
+    <string name="scan_successful">Scan Successful</string>
+    <string name="turn_on_nfc">Turn on NFC</string>
 </resources>
