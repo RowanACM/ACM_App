@@ -7,24 +7,35 @@ import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.Button;
-
-import com.example.acm.acmapp.Activities.CheckInActivity;
 import com.example.acm.acmapp.R;
+import android.webkit.WebViewClient;
 
 public class MainActivity extends AppCompatActivity {
 
     private final static String ACM_URL = "http://elvis.rowan.edu/acm/v1/";
+    private WebView webView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        WebView webView = (WebView) findViewById(R.id.webview);
+        webView = (WebView) findViewById(R.id.webview);
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
 
-        webView.loadUrl(ACM_URL);
+        webView.loadData("<iframe src=\"https://www.google.com/calendar/embed?showTz=0&amp;src=students.rowan.edu_gj0umqr01gtm1ofgc576fu3ujs%40group.calendar.google.com&amp;ctz=America/New_York\" style=\"border: 0\" width=\"" + "100%" + "\" height=\"" + "100%" + "\" frameborder=\"0\" scrolling=\"no\"> </iframe>", "text/html", "utf-8");
+        //webView.loadUrl(ACM_URL); // initial page load
+
+        // client overrides loadurl after initial page load (in app, not browser)
+        class MyWebViewClient extends WebViewClient {
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                view.loadUrl(url);
+                return true;
+            }
+        }
+        webView.setWebViewClient(new MyWebViewClient());
 
         final Intent switchActivityIntent = new Intent(this, CheckInActivity.class);
 
@@ -38,4 +49,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
+
+
 }
