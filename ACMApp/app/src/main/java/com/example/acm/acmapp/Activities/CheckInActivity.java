@@ -4,16 +4,21 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.acm.acmapp.NFC.NfcManager;
-import com.example.acm.acmapp.R;
 import com.example.acm.acmapp.Data.ReadWrite;
 import com.example.acm.acmapp.Data.SaveData;
 import com.example.acm.acmapp.Data.Scan;
 import com.example.acm.acmapp.Data.SendToServer;
+import com.example.acm.acmapp.NFC.NfcManager;
+import com.example.acm.acmapp.R;
 
 import java.io.IOException;
 
@@ -180,7 +185,6 @@ public class CheckInActivity extends AppCompatActivity {
      * Display a checkmark toast to notify the user of a successful scan
      */
     private void showCheckmarkToast(){
-        /*
         // Inflate the toast layout
         LayoutInflater inflater = getLayoutInflater();
         View layout = inflater.inflate(R.layout.toast_checkmark,
@@ -194,9 +198,8 @@ public class CheckInActivity extends AppCompatActivity {
         toast.setDuration(Toast.LENGTH_SHORT);
         toast.setView(layout);
         toast.show();
-        */
 
-        Toast.makeText(this, "Scan Successful", Toast.LENGTH_SHORT).show();
+        // Toast.makeText(this, "Scan Successful", Toast.LENGTH_SHORT).show();
     }
 
     /**
