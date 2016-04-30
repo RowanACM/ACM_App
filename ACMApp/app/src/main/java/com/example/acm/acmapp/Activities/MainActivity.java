@@ -1,56 +1,106 @@
 package com.example.acm.acmapp.Activities;
 
-import android.content.Intent;
+import android.app.FragmentManager;
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.widget.Button;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
+
+import com.example.acm.acmapp.Fragments.CheckInFragment;
+import com.example.acm.acmapp.Fragments.EventsFragment;
+import com.example.acm.acmapp.Fragments.HomeFragment;
 import com.example.acm.acmapp.R;
-import android.webkit.WebViewClient;
 
-public class MainActivity extends AppCompatActivity {
-
-    private final static String ACM_URL = "http://elvis.rowan.edu/acm/v1/";
-    private WebView webView;
+public class MainActivity extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
-        webView = (WebView) findViewById(R.id.webview);
-        WebSettings webSettings = webView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
 
-        webView.loadData("<iframe src=\"https://www.google.com/calendar/embed?showTz=0&amp;src=students.rowan.edu_gj0umqr01gtm1ofgc576fu3ujs%40group.calendar.google.com&amp;ctz=America/New_York\" style=\"border: 0\" width=\"" + "100%" + "\" height=\"" + "100%" + "\" frameborder=\"0\" scrolling=\"no\"> </iframe>", "text/html", "utf-8");
-        //webView.loadUrl(ACM_URL); // initial page load
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.getMenu().getItem(0).setChecked(true); //set first item as selected by default
 
-        // client overrides loadurl after initial page load (in app, not browser)
-        class MyWebViewClient extends WebViewClient {
-            @Override
-            public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                view.loadUrl(url);
-                return true;
-            }
-        }
-        webView.setWebViewClient(new MyWebViewClient());
+        FragmentManager fm = getFragmentManager();
+        fm.beginTransaction().replace(R.id.content_frame, new HomeFragment()).commit(); //default fragment on startup
 
-        final Intent switchActivityIntent = new Intent(this, CheckInActivity.class);
-
-        Button checkIn = (Button) findViewById(R.id.check_in_button);
-        checkIn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(switchActivityIntent);
-            }
-        });
 
 
     }
 
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.navigation, menu);
+        return true;
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
 
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @SuppressWarnings("StatementWithEmptyBody")
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+
+        FragmentManager fm = getFragmentManager();
+
+        int id = item.getItemId();
+        //reminder: a new instance of a fragment is created on every navigation selection
+        if (id == R.id.nav_home) {
+            fm.beginTransaction().replace(R.id.content_frame, new HomeFragment()).commit();
+        } else if (id == R.id.nav_events) {
+            fm.beginTransaction().replace(R.id.content_frame, new EventsFragment()).commit();
+        } else if (id == R.id.nav_board_members) {
+
+        } else if (id == R.id.nav_contact_us) {
+
+        } else if (id == R.id.nav_adm_attendance) {
+            fm.beginTransaction().replace(R.id.content_frame, new CheckInFragment()).commit();
+        } else if (id == R.id.nav_adm_new_user) {
+            //handle NFC
+        } else if (id == R.id.nav_adm_to_committee) {
+            //handle NFC
+        }
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
 }

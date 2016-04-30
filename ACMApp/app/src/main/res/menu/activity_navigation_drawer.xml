@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="ACM Home Page" />
+        <item
+            android:id="@+id/nav_events"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Events" />
+        <item
+            android:id="@+id/nav_board_members"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Board Members" />
+        <item
+            android:id="@+id/nav_contact_us"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Contact Us" />
+    </group>
+
+    <item android:title="Admin">
+        <menu>
+            <item
+                android:id="@+id/nav_adm_attendance"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Attendance" />
+            <item
+                android:id="@+id/nav_adm_new_user"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Register New User" />
+            <item
+                android:id="@+id/nav_adm_to_committee"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Register to Committee" />
+        </menu>
+    </item>
+
+</menu>
