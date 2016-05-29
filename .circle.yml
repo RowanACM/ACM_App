@@ -1,0 +1,26 @@
+general:
+  artifacts:
+    - app/build/outputs
+    - app/build/reports
+
+machine:
+  environment:
+    # Use a longer timeout to prevent timeout errors
+    # See https://code.google.com/p/android/issues/detail?id=189764
+    ADB_INSTALL_TIMEOUT: 6000
+    
+dependencies:
+  pre:
+    # Update the avd
+    - ( sleep 5 && while [ 1 ]; do sleep 1; echo y; done ) | android update sdk --no-ui --all
+  override:
+    - export TERM="dumb"
+    - if [ -e ./gradlew ]; then ./gradlew dependencies;else gradle dependencies;fi
+
+test:
+  override:
+    - ./gradlew build
+  
+  post:
+    - mkdir -p $CIRCLE_TEST_REPORTS/junit/
+    - find . -type f -regex ".*/app/build/outputs/androidTest-results/connected/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
